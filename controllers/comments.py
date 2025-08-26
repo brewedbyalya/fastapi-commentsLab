@@ -52,7 +52,7 @@ def update_comment(comment_id: int, comment_data: dict, db: Session = Depends(ge
     db.refresh(db_comment)
     return db_comment
 
-# delete comment by id
+# delete comment by id 
 @router.delete("/comments/{comment_id}")
 def delete_comment(comment_id: int, db: Session = Depends(get_db)):
     db_comment = db.query(CommentModel).filter(CommentModel.id == comment_id).first()
