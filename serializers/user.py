@@ -12,11 +12,11 @@ class UserResponseSchema(BaseModel):
     username: str
     email: str
 
-class UserLogin(BaseModel):
+class UserLoginSchema(BaseModel):
     username: str
     password: str
 
-class UserToken(BaseModel):
+class UserTokenSchema(BaseModel):
     token: str
     message: str
 

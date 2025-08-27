@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String
 from .base import Base
 from passlib.context import CryptContext
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import jwt
 
 from config.environment import secret
