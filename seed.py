@@ -10,21 +10,18 @@ SessionLocal = sessionmaker(bind=engine)
 
 try:
     print("Recreating database...")
-    # Drop and recreate tables to ensure a clean slate
     Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
 
     print("Seeding the database...")
     db = SessionLocal()
 
-    # Seed teas first, as comments depend on them
     db.add_all(teas_list)
     db.commit()
 
     db.add_all(user_list)
     db.commit()
 
-    # Seed comments after teas
     db.add_all(comments_list)
     db.commit()
     db.close()
