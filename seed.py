@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session, sessionmaker
 from models.base import Base
 from data.tea_data import teas_list, comments_list
+from data.user_data import user_list
 from config.environment import db_URI
 from sqlalchemy import create_engine
 
@@ -18,6 +19,9 @@ try:
 
     # Seed teas first, as comments depend on them
     db.add_all(teas_list)
+    db.commit()
+
+    db.add_all(user_list)
     db.commit()
 
     # Seed comments after teas
