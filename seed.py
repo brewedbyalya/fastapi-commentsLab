@@ -1,4 +1,4 @@
-from sqlalchemy.orm import Session, sessionmaker
+from sqlalchemy.orm import sessionmaker
 from models.base import Base
 from data.tea_data import teas_list, comments_list
 from data.user_data import user_list
@@ -16,14 +16,15 @@ try:
     print("Seeding the database...")
     db = SessionLocal()
 
-    db.add_all(teas_list)
+    db.add_all(user_list)
     db.commit()
 
-    db.add_all(user_list)
+    db.add_all(teas_list)
     db.commit()
 
     db.add_all(comments_list)
     db.commit()
+
     db.close()
 
     print("Database seeding complete! 👋")
