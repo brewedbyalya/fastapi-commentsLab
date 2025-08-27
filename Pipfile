@@ -14,5 +14,8 @@ bcrypt = "*"
 pyjwt = "*"
 
 [dev-packages]
+pytest = "*"
+starlette = "*"
+httpx = "*"
 
 [requires]
